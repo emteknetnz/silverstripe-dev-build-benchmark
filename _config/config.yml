@@ -1,0 +1,11 @@
+---
+Name: dev-build-benchmark
+After: databaseconnectors
+---
+SilverStripe\Core\Injector\Injector:
+  MySQLDatabase:
+    class: emteknetnz\DevBuildBenchmark\DevBuildBenchmarkMySQLDatabase
+
+SilverStripe\ORM\DatabaseAdmin:
+  extensions:
+    - emteknetnz\DevBuildBenchmark\DatabaseAdminExtension

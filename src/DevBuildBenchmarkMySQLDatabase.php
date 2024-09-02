@@ -1,6 +1,6 @@
 <?php
 
-namespace zzz\emteknetnz\DevBuildBenchmark;
+namespace emteknetnz\DevBuildBenchmark;
 
 use SilverStripe\ORM\Connect\MySQLDatabase;
 use SilverStripe\Core\TempFolder;
@@ -23,7 +23,7 @@ class DevBuildBenchmarkMySQLDatabase extends MySQLDatabase
         $time = microtime(true) - $start;
         $cleanSql = preg_replace('#[\r\n\t]#', ' ', $sql);
         $cleanSql = preg_replace('# {2,}#', ' ', $cleanSql);
-        $delimter = DevBuildBenchmark::DELIMITER;
+        $delimter = DatabaseAdminExtension::DELIMITER;
         $line = implode($delimter, [
             date('Y-m-d H:i:s'),
             number_format($time, 5),

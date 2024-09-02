@@ -19,8 +19,4 @@ This report is only available to users with the `ADMIN` permission.
 composer require emteknetnz/silverstripe-dev-build-benchmark
 ```
 
-Simply install this module. The next time `dev/build` is run, the benchmark data will be recorded in the `ZZZDevBuildBenchmark` database table.
-
-## Notes
-
-The namespaces used in this module are prefixed with `zzz\` to ensure they are loaded last. This is to ensure that the benchmarking is as accurate as possible.
+Simply install this module. The next time `dev/build` is run, the benchmark data will be recorded in the `DevBuildBenchmark` database table.

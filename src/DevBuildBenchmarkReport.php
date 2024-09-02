@@ -1,6 +1,6 @@
 <?php
 
-namespace zzz\emteknetnz\DevBuildBenchmark;
+namespace emteknetnz\DevBuildBenchmark;
 
 use SilverStripe\Reports\Report;
 use SilverStripe\Security\Security;
@@ -14,7 +14,7 @@ class DevBuildBenchmarkReport extends Report
 
     public function sourceRecords()
     {
-        return ZZZDevBuildBenchmark::get();
+        return DevBuildBenchmark::get();
     }
 
     public function canView($member = null)

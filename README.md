@@ -1,8 +1,8 @@
 # Silverstripe dev/build benchmark
 
-Will benchmark the time taken to run the last `dev/build` on a Silverstripe application. This includes deployments.
+Will benchmark the time taken to run every individual query during the last `dev/build` on a Silverstripe application. This includes deployments.
 
-There is a `dev/build benchmark` report (`DevBuildBenchmarkReport`) available in the CMS which will show the time taken for each `dev/build` run.
+There is a `dev/build benchmark` report (`DevBuildBenchmarkReport`) available in the CMS which will show the time taken for each `dev/build` run. The report is sorted by time taken, with the slowest queries at the top.
 
 This report is only available to users with the `ADMIN` permission.
 

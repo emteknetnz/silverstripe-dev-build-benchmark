@@ -1,6 +1,6 @@
 <?php
 
-namespace emteknetnz\DevBuildBenchmark;
+namespace zzz\emteknetnz\DevBuildBenchmark;
 
 use SilverStripe\Core\Extension;
 

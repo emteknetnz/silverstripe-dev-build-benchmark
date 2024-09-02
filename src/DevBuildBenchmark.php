@@ -1,16 +1,15 @@
 <?php
 
-namespace emteknetnz\DevBuildBenchmark;
+namespace zzz\emteknetnz\DevBuildBenchmark;
 
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\DB;
 
-// Prefixed with ZZZ so that it runs after everything else
-class ZZZDevBuildBenchmark extends DataObject
+class DevBuildBenchmark extends DataObject
 {
     public const DELIMITER = ':::';
 
-    private static $table_name = 'ZZZDevBuildBenchmark';
+    private static $table_name = 'DevBuildBenchmark';
 
     private static $db = [
         'When' => 'Datetime',

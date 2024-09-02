@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
         "silverstripe/framework": "^4 || ^5",
         "silverstripe/reports": "^4 || ^5"
     },

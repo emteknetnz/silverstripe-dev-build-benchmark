@@ -1,6 +1,6 @@
 <?php
 
-namespace emteknetnz\DevBuildBenchmark;
+namespace zzz\emteknetnz\DevBuildBenchmark;
 
 use SilverStripe\Reports\Report;
 use SilverStripe\Security\Security;

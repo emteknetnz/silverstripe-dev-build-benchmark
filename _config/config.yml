@@ -4,8 +4,8 @@ After: databaseconnectors
 ---
 SilverStripe\Core\Injector\Injector:
   MySQLDatabase:
-    class: emteknetnz\DevBuildBenchmark\DevBuildBenchmarkMySQLDatabase
+    class: zzz\emteknetnz\DevBuildBenchmark\DevBuildBenchmarkMySQLDatabase
 
 SilverStripe\ORM\DatabaseAdmin:
   extensions:
-    - emteknetnz\DevBuildBenchmark\DatabaseAdminExtension
+    - zzz\emteknetnz\DevBuildBenchmark\DatabaseAdminExtension

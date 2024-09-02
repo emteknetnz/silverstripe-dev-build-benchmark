@@ -20,3 +20,5 @@ composer require emteknetnz/silverstripe-dev-build-benchmark
 ```
 
 Simply install this module. The next time `dev/build` is run, the benchmark data will be recorded in the `DevBuildBenchmark` database table.
+
+This modules with with Silverstripe 4 and 5.

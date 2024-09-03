@@ -1,6 +1,8 @@
 # Silverstripe dev/build benchmark
 
-Will benchmark the time taken to run every queries during the last `dev/build` on a Silverstripe application. This includes deployments.
+Will benchmark the time taken to run queries during the last `dev/build` on a Silverstripe application, includeing deployments. Includes admin-only reports to show results.
+
+![screenshot](screenshot.png)
 
 There are two reports available:
 
@@ -34,5 +36,3 @@ Simply install this module. The next time `dev/build` is run, the benchmark data
 You must be using MySQL or MariaDB to use this module. The default `MySQLDatabase` class will be replaced with the `DevBuildBenchmarkMySQLDatabase` class in this module via injector. If you have already replaced the `MySQLDatabase` class with another class then this module will not work.
 
 This module works with Silverstripe 4 and 5.
-
-![screenshot](screenshot.png)

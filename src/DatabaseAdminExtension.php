@@ -51,6 +51,8 @@ class DatabaseAdminExtension extends Extension
         $table = DataObject::getSchema()->tableName(DevBuildBenchmarkSummary::class);
         DB::query("TRUNCATE TABLE \"$table\"");
         $res = [];
+        $totalCount = 0;
+        $counts = [];
         foreach ($data as $arr) {
             [$when, $time, $sql] = $arr;
             // truncate the SQL before any quotes
@@ -64,18 +66,28 @@ class DatabaseAdminExtension extends Extension
             }
             $res[$sql] ??= 0;
             $res[$sql] += $time;
+            $counts[$sql] ??= 0;
+            $counts[$sql]++;
+            $totalCount++;
         }
         // limit to 14 records and sum everything else into an "Other queries" category
         arsort($res);
         $res2 = array_slice($res, 0, 14, true) + ['Other queries' => 0];
         $res2['Other queries'] = array_sum(array_slice($res, 14));
+        uksort($counts, function ($a, $b) use ($res2) {
+            return array_key_exists($a, $res2) ? -1 : 0;
+        });
+        $counts2 = array_slice($counts, 0, 14, true) + ['Other queries' => 0];
+        $counts2['Other queries'] = array_sum(array_slice($counts, 14));
         asort($res2);
         $total = array_sum($res2);
         foreach ($res2 as $sql => $time) {
             $perc = number_format(($time / $total) * 100, 1) . '%';
+            $count = $counts2[$sql];
             DevBuildBenchmarkSummary::create([
                 'TotalTime' => number_format($time, 4),
                 'Percentage' => $perc,
+                'Count' => $count,
                 'TruncatedSQL' => $sql,
             ])->write();
         }

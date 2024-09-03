@@ -14,12 +14,14 @@ class DevBuildBenchmarkSummary extends DataObject
     private static $db = [
         'TotalTime' => 'Float',
         'Percentage' => 'Varchar',
+        'Count' => 'Int',
         'TruncatedSQL' => 'Varchar',
     ];
 
     private static $summary_fields = [
-        'TotalTime',
+        'TotalTime' => 'Time (seconds)',
         'Percentage',
+        'Count',
         'TruncatedSQL',
     ];
 

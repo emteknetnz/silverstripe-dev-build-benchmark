@@ -1,6 +1,6 @@
 # Silverstripe dev/build benchmark
 
-Will benchmark the time taken to run queries during the last `dev/build` on a Silverstripe application, includeing deployments, and show them in a report format in the CMS
+Will benchmark the time taken to run queries during the last `dev/build` on a Silverstripe application, including deployments, and show them in a report format in the CMS
 
 ![screenshot](screenshot.png)
 
@@ -24,16 +24,16 @@ There are two reports available. You must have `ADMIN` permissions to view the r
 
 ### dev/build summary
 
-A `dev/build summary` report (`DevBuildBenchmarkSummary`) showing the total time in seconds taken for queries, which are grouped together. This is enabled by default.
+The `dev/build summary` report (`DevBuildBenchmarkSummary`) shows the total time in seconds taken for queries, which are grouped together. This is always enabled.
 
 ### dev/build queries
 
-A `dev/build queries` report (`DevBuildBenchmarkQuery`) will show the time taken in seconds for each `dev/build` run. This is useful for identifying slow queries individual that may be affecting the performance of your application. Not enabled by default and must configured to enable.
+The `dev/build queries` report (`DevBuildBenchmarkQuery`) will show the time taken in seconds for each `dev/build` run. This is useful for identifying slow queries that may be affecting the performance of your application. Not enabled by default and must be configured to enable.
 
 > [!WARNING]
 > The `dev/build queries` report will show **ALL** database queries run during `dev/build`.
 >
-> It is up to the developer installing this module to be mindful any sensitive information that may be displayed in the report, for instance any queries run during `requireDefaultRecords()`.
+> It is up to the developer installing this module to be mindful of any sensitive information that may be displayed in the report, for instance any queries run during `requireDefaultRecords()`.
 >
 > Be sure you are aware of what will be logged before deploying this module to an environment with sensitive data e.g. production.
 

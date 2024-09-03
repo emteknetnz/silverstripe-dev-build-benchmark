@@ -4,8 +4,8 @@ Will benchmark the time taken to run every queries during the last `dev/build` o
 
 There are two reports available:
 
-A) A `dev/build summary` report (`DevBuildBenchmarkSummary`) showing the total time taken queries, which are grouped together. This is enabled by default.
-B) If configured to do so, a `dev/build queries` report (`DevBuildBenchmarkQuery`) will show the time taken for each `dev/build` run. This is useful for identifying slow queries individual that may be affecting the performance of your application.
+A) A `dev/build summary` report (`DevBuildBenchmarkSummary`) showing the total time in seconds taken for queries, which are grouped together. This is enabled by default.
+B) If configured to do so, a `dev/build queries` report (`DevBuildBenchmarkQuery`) will show the time taken in seconds for each `dev/build` run. This is useful for identifying slow queries individual that may be affecting the performance of your application.
 
 > [!WARNING]
 > The `dev/build queries` report will show **ALL** database queries run during `dev/build`. It must must enabled via the `DatabaseAdminExtension.store_query_data` configuration option. This is disabled by default.
@@ -34,3 +34,5 @@ Simply install this module. The next time `dev/build` is run, the benchmark data
 You must be using MySQL or MariaDB to use this module. The default `MySQLDatabase` class will be replaced with the `DevBuildBenchmarkMySQLDatabase` class in this module via injector. If you have already replaced the `MySQLDatabase` class with another class then this module will not work.
 
 This module works with Silverstripe 4 and 5.
+
+![screenshot](screenshot.png)

@@ -5,16 +5,20 @@ namespace emteknetnz\DevBuildBenchmark;
 use SilverStripe\Reports\Report;
 use SilverStripe\Security\Security;
 use SilverStripe\Security\Permission;
+use SilverStripe\ORM\ArrayList;
 
-class DevBuildBenchmarkReport extends Report
+/**
+ * Report showing summary of queries during the last dev/build
+ */
+class DevBuildBenchmarkSummaryReport extends Report
 {
-    protected $title = 'dev/build benchmark';
+    protected $title = 'dev/build summary';
 
-    protected $description = 'Benchmark from the last dev/build';
+    protected $description = 'Summary of queries from the last dev/build';
 
     public function sourceRecords()
     {
-        return DevBuildBenchmark::get();
+        return DevBuildBenchmarkSummary::get();
     }
 
     public function canView($member = null)
